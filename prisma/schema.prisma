@@ -9,3 +9,20 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+model RestaurantInfo {
+id Int  @id @default(autoincrement())
+restaurantname String
+restaurantlocation String
+restaurantrating Int
+restaurantimage String
+createdAt DateTime @default(now())
+updatedAt DateTime @updatedAt
+restauranttypeid Int @unique
+restauranttype RestaurantTypeInfo @relation(fields: [restauranttypeid], references: [typeid])
+}
+
+model RestaurantTypeInfo {
+typeid Int  @id @default(autoincrement())
+restauranttype String
+restaurantcategory RestaurantInfo[]// info for multiple restaurants of same type
+}
