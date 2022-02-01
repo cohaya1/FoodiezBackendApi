@@ -1,4 +1,3 @@
-
 import {ApolloServer} from 'apollo-server';
 import {Query} from './resolvers/Query';
 import {typeDefs} from './schema';

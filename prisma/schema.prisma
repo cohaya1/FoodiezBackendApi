@@ -13,11 +13,12 @@ model RestaurantInfo {
 id Int  @id @default(autoincrement())
 restaurantname String
 restaurantlocation String
-restaurantrating Int
+restaurantrating Float
 restaurantimage String
+restaurantdescription String
 createdAt DateTime @default(now())
 updatedAt DateTime @updatedAt
-restauranttypeid Int @unique
+restauranttypeid Int 
 restauranttype RestaurantTypeInfo @relation(fields: [restauranttypeid], references: [typeid])
 }
 

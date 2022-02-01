@@ -1,3 +1,7 @@
+import { Context } from "..";
+
 export const Query = {
-    hello: () => 'Hello world!',
-}
+    restaurants:  (_: any, __: any, {prisma}: Context ) => {
+     return  prisma.restaurantInfo.findMany()  
+    },
+};

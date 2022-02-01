@@ -10,7 +10,7 @@ interface CreateRestaurantArgs{
 }
 export const Mutation = {
     createRestaurant: (__: any, {restaurantname,restaurantimage,restauranttype,restaurantrating,restaurantlocation}: any, {prisma}: any) =>{
-        prisma.restaurants.create({
+        prisma.RestaurantInfo.create({
             data: {
                 restaurantname,
                 restaurantlocation,
